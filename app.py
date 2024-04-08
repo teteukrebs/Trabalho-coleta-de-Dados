@@ -44,4 +44,4 @@ def delete_movie(id):
     return {"error": "Filme não encontrado"}, 404
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host='0.0.0.0')
