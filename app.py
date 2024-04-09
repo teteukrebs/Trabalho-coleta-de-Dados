@@ -14,14 +14,10 @@ def get_movies():
     return jsonify(MOVIES)
 @app.route("/movies/<int:id>", methods=['GET'])
 def get_movies_byId(id):
-    global max_id
-    if request.is_json:
-        movia_data = request.get_json()
         for movie in MOVIES:
             if movie['id'] == id:
                 return jsonify(movie), 200
         return {"error": "Filme não encontrado"}, 404
-    return {"error": "Formato deve ser JSON"}, 415
 
 @app.route("/movie", methods=['POST'])
 def add_movie():
